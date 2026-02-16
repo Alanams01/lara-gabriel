@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lara & Gabriel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html, body { 
+            height: 100%; 
+            width: 100%; 
+            background-color: #000; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow: hidden; 
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('page.jpeg') no-repeat center center;
+            background-size: cover; z-index: 1;
+        }
+
+        .main-ui {
+            position: relative; 
+            z-index: 10; 
+            height: 100dvh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; /* Force l'écart entre haut, milieu et bas */
+            align-items: center; 
+            padding: 5dvh 15px; /* Padding proportionnel à la hauteur de l'écran */
+        }
+
+        /* LOGO XXL MAIS BIEN PLACÉ */
+        .logo-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex: 0 1 auto;
+        }
+
+        .logo { 
+            max-width: 420px; 
+            width: 90%; 
+            height: auto; 
+            filter: drop-shadow(0px 5px 20px rgba(0,0,0,0.8)); 
+        }
+
+        /* BOUTON : Centré avec de l'espace autour */
+        .cta-container {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center; /* Centre le bouton verticalement dans l'espace restant */
+            justify-content: center;
+        }
+
+        .cta-center {
+            text-decoration: none; 
+            color: #fff; 
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 16px 40px; 
+            font-size: 11px; 
+            text-transform: uppercase;
+            letter-spacing: 5px; 
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        /* COMPTEUR : Ancré en bas sans étouffer le reste */
+        .timer-container {
+            width: 100%;
+            max-width: 360px;
+            padding-bottom: 10px;
+            flex: 0 0 auto;
+        }
+
+        .timer-bottom { 
+            display: flex; 
+            width: 100%; 
+            justify-content: space-around;
+            background: rgba(0,0,0,0.4);
+            padding: 15px 5px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .t-item { text-align: center; }
+
+        .t-num { 
+            display: block; 
+            font-family: 'Cinzel', serif; 
+            font-size: 1.8rem; 
+            color: #fff; 
+            line-height: 1; 
+        }
+
+        .t-lab { 
+            display: block; 
+            font-size: 8px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-top: 6px; 
+            color: #d4af37;
+        }
+
+        /* Ajustement spécial pour les petits téléphones (iPhone SE, etc.) */
+        @media (max-height: 600px) {
+            .logo { max-width: 280px; }
+            .t-num { font-size: 1.4rem; }
+            .cta-center { padding: 12px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+
+    <div class="main-ui">
+        <div class="logo-box">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="cta-container">
+            <a href="premiere-page.html" class="cta-center">Voir l'invitation</a>
+        </div>
+
+        <div class="timer-container">
+            <div class="timer-bottom">
+                <div class="t-item"><span class="t-num" id="d">00</span><span class="t-lab">Jours</span></div>
+                <div class="t-item"><span class="t-num" id="h">00</span><span class="t-lab">Hrs</span></div>
+                <div class="t-item"><span class="t-num" id="m">00</span><span class="t-lab">Min</span></div>
+                <div class="t-item"><span class="t-num" id="s">00</span><span class="t-lab">Sec</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const end = new Date("June 21, 2026 17:00:00").getTime();
+        function update() {
+            const now = new Date().getTime();
+            const diff = end - now;
+            
+            if (diff <= 0) {
+                document.getElementById("d").innerText = "00";
+                return;
+            }
+
+            document.getElementById("d").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("h").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("m").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("s").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }
+        setInterval(update, 1000); 
+        update();
+    </script>
+</body>
+</html>
