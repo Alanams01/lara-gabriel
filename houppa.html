@@ -15,12 +15,13 @@
             overflow: hidden; 
         }
 
-        /* ARRIÈRE-PLAN : Vue dézoomée sur Paris */
+        /* AJUSTEMENT PLEIN ÉCRAN TOTAL */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: url('page.jpeg') no-repeat center center;
-            background-size: cover;
+            background: url('page.png') no-repeat center center;
+            /* Force l'image à prendre 100% de la largeur et de la hauteur pour mobile */
+            background-size: 100% 100%; 
             z-index: 1;
         }
 
@@ -34,14 +35,14 @@
             padding: 20px;
         }
 
-        /* VOILE BLANC ÉLÉGANT ET TRÈS ESPACÉ */
+        /* VOILE BLANC ÉLÉGANT ET ESPACÉ */
         .overlay-card {
-            background: rgba(255, 255, 255, 0.45); /* */
+            background: rgba(255, 255, 255, 0.45); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             width: 92%;
             max-width: 450px;
-            padding: 60px 25px; /* Espace intérieur généreux pour l'élégance */
+            padding: 50px 25px; 
             text-align: center;
             border-radius: 2px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
@@ -58,11 +59,10 @@
             color: #c39d7b; /* Couleur sable */
         }
 
-        /* TITRE SCRIPT MAJESTUEUX */
         .script-title {
             font-family: 'Great Vibes', cursive;
             font-size: 4.2rem;
-            color: #c39d7b; /* */
+            color: #c39d7b; /* Couleur sable */
             margin-bottom: 20px;
             font-weight: 400;
         }
@@ -71,14 +71,14 @@
             font-family: 'Assistant', sans-serif;
             font-size: 2.2rem;
             color: #1a1a1a;
-            margin-bottom: 45px;
+            margin-bottom: 35px;
             direction: rtl;
             font-weight: 300;
             letter-spacing: 5px;
         }
 
         .event-info {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .date-text {
@@ -87,17 +87,17 @@
             letter-spacing: 3px;
             font-size: 1rem;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #1a1a1a;
         }
 
         .time-badge {
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
-            color: #c39d7b; /* */
+            color: #c39d7b; /* Couleur sable */
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 700;
         }
 
@@ -113,23 +113,22 @@
         .address {
             font-size: 0.95rem;
             opacity: 0.85;
-            line-height: 1.7;
+            line-height: 1.6;
             font-style: italic;
         }
 
         .divider {
             width: 50px;
             height: 1px;
-            background: #c39d7b; /* */
-            margin: 40px auto;
+            background: #c39d7b; /* Couleur sable */
+            margin: 35px auto;
             opacity: 0.4;
         }
 
-        /* BOUTON DÉCOUVRIR STYLE SABLE */
         .back-btn {
             margin-top: 10px;
             display: inline-block;
-            background: #c39d7b; /* */
+            background: #c39d7b; /* Couleur sable */
             color: #fff;
             text-decoration: none;
             padding: 16px 50px;
@@ -137,13 +136,11 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .back-btn:hover {
             background: #b08968;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
     </style>
 </head>
