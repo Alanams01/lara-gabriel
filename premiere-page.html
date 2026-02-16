@@ -16,13 +16,14 @@
             overflow: hidden; 
         }
 
-        /* DEZOOM MAXIMUM : On voit toute la photo */
+        /* AJUSTEMENT PLEIN ÉCRAN TOTAL */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
-                        url('page.jpeg') no-repeat center center;
-            background-size: cover; /* Garde l'aspect ratio tout en couvrant l'écran */
+                        url('page.png') no-repeat center center;
+            /* Force l'image à prendre 100% de la largeur et de la hauteur */
+            background-size: 100% 100%; 
             z-index: 1;
         }
 
