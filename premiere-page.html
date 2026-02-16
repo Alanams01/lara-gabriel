@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Programme - Lara & Gabriel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body, html { 
+            height: 100%; 
+            width: 100%; 
+            background-color: #000; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow: hidden; 
+        }
+
+        /* ARRIÈRE-PLAN AVEC TA PHOTO photo2.png */
+        .bg-container {
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            /* Ajout d'un léger voile sombre pour assurer la lisibilité du texte */
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                        url('photo2.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .main-ui {
+            position: relative; 
+            z-index: 10; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff; /* Texte blanc pour ressortir sur l'image */
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* NAVIGATION VERTICALE STYLE "PROGRAMME" */
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.4s;
+        }
+
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem; 
+            font-style: italic;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
+        }
+
+        .nav-link:hover .nav-title {
+            opacity: 0.7;
+            transform: scale(1.05);
+            color: #d4af37; /* Teinte dorée au survol */
+        }
+
+        /* BOUTON RETOUR */
+        .back-home {
+            position: absolute;
+            bottom: 40px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+
+    <div class="main-ui">
+        <h1>Programme</h1>
+
+        <div class="nav-list">
+            <a href="mairie.html" class="nav-link">
+                <span class="nav-title">Mairie</span>
+            </a>
+
+            <a href="houppa.html" class="nav-link">
+                <span class="nav-title">Houppa</span>
+            </a>
+
+            <a href="chabbat.html" class="nav-link">
+                <span class="nav-title">Chabbat</span>
+            </a>
+
+            <a href="reponse.html" class="nav-link">
+                <span class="nav-title">Votre réponse</span>
+            </a>
+        </div>
+
+        <a href="index.html" class="back-home">Retour</a>
+    </div>
+
+</body>
+</html>
