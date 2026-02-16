@@ -15,12 +15,13 @@
             overflow-x: hidden; 
         }
 
-        /* ARRIÈRE-PLAN : Image dézoomée */
+        /* ARRIÈRE-PLAN PLEIN ÉCRAN */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: url('page.jpeg') no-repeat center center;
-            background-size: cover;
+            background: url('page.png') no-repeat center center;
+            /* Force l'image à prendre tout l'écran sans bandes noires */
+            background-size: 100% 100%; 
             z-index: 1;
         }
 
@@ -34,14 +35,14 @@
             padding: 20px;
         }
 
-        /* LE VOILE BLANC TRANSLUCIDE (Inspiré de ta maquette) */
+        /* VOILE BLANC TRANSLUCIDE */
         .overlay-card {
-            background: rgba(255, 255, 255, 0.45); /* Voile blanc translucide */
-            backdrop-filter: blur(10px); /* Effet flouté */
+            background: rgba(255, 255, 255, 0.45); 
+            backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             width: 95%;
             max-width: 450px;
-            padding: 40px 25px;
+            padding: 35px 25px;
             text-align: center;
             border-radius: 2px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -59,8 +60,8 @@
 
         .instruction {
             font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
             color: #333;
         }
 
@@ -72,7 +73,7 @@
             color: #1a1a1a; 
             display: block; 
             margin-bottom: 8px;
-            margin-top: 20px;
+            margin-top: 15px;
             letter-spacing: 1px;
             font-weight: 700;
         }
@@ -83,26 +84,23 @@
             border-bottom: 1px solid #c39d7b;
             font-family: 'Montserrat', sans-serif; 
             font-size: 1rem;
-            margin-bottom: 15px; 
             outline: none; 
             background: rgba(255,255,255,0.2);
             color: #1a1a1a;
         }
 
-        /* --- OPTIONS PRÉSENCE --- */
         .presence-options {
-            display: flex; gap: 25px; margin-bottom: 10px;
+            display: flex; gap: 20px; margin-top: 5px;
         }
 
         .option-item {
-            display: flex; align-items: center; gap: 8px;
-            cursor: pointer; font-size: 0.85rem; text-transform: uppercase; 
+            display: flex; align-items: center; gap: 6px;
+            cursor: pointer; font-size: 0.8rem; text-transform: uppercase; 
             font-weight: 600;
         }
 
         input[type="radio"] { accent-color: #c39d7b; transform: scale(1.1); }
 
-        /* --- CHAMP NOMBRE MASQUÉ --- */
         .guest-count-box {
             display: none;
             margin-top: 10px;
@@ -113,11 +111,11 @@
 
         /* BOUTON SABLE */
         .btn-submit {
-            width: 100%; margin-top: 35px;
+            width: 100%; margin-top: 30px;
             background: #c39d7b; 
             color: #fff;
             border: none; 
-            padding: 15px;
+            padding: 14px;
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase; 
             letter-spacing: 3px;
@@ -127,15 +125,12 @@
             transition: 0.3s;
         }
 
-        .btn-submit:hover { background: #b08968; }
-
         .back-btn {
-            margin-top: 25px; display: inline-block;
+            margin-top: 20px; display: inline-block;
             text-decoration: none; color: #1a1a1a;
             font-size: 0.7rem; text-transform: uppercase;
             letter-spacing: 3px; opacity: 0.6;
             border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 2px;
         }
     </style>
 </head>
@@ -182,7 +177,7 @@
                 <button type="submit" class="btn-submit" id="submitBtn">Confirmer ma venue</button>
             </form>
 
-            <a href="premiere-page.html" class="back-btn">Retour au programme</a>
+            <a href="premiere-page.html" class="back-btn">Retour</a>
         </div>
     </div>
 
@@ -193,25 +188,25 @@
             if(!isPresent) box.querySelector('input').value = "";
         }
 
-        const scriptURL = 'TON_URL_GOOGLE_APPS_SCRIPT_ICI';
+        const scriptURL = 'VOTRE_URL_SCRIPT';
         const form = document.getElementById('rsvpForm');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerHTML = "Envoi en cours...";
+            btn.innerHTML = "Envoi...";
             btn.disabled = true;
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    btn.innerHTML = "Merci pour votre réponse !";
+                .then(() => {
+                    btn.innerHTML = "Merci !";
                     form.reset();
                     setTimeout(() => { window.location.href = "premiere-page.html"; }, 2000);
                 })
-                .catch(error => {
-                    alert("Erreur lors de l'envoi");
+                .catch(() => {
+                    alert("Erreur");
                     btn.disabled = false;
-                    btn.innerHTML = "Confirmer ma venue";
+                    btn.innerHTML = "Confirmer";
                 });
         });
     </script>
