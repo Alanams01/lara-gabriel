@@ -4,87 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Programme - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body, html { 
-            height: 100%; 
+            height: 100dvh; 
             width: 100%; 
             background-color: #000; 
             font-family: 'Montserrat', sans-serif; 
             overflow: hidden; 
         }
 
-        /* ARRIÈRE-PLAN AVEC TA PHOTO photo2.png */
+        /* DEZOOM MAXIMUM : On voit toute la photo */
         .bg-container {
             position: fixed;
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            /* Ajout d'un léger voile sombre pour assurer la lisibilité du texte */
+            top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
-                        url('photo2.png') no-repeat center center;
-            background-size: cover;
+                        url('page.jpeg') no-repeat center center;
+            background-size: cover; /* Garde l'aspect ratio tout en couvrant l'écran */
             z-index: 1;
         }
 
         .main-ui {
             position: relative; 
             z-index: 10; 
-            height: 100vh; 
+            height: 100dvh; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center;
-            padding: 40px 20px;
+            padding: 20px;
             text-align: center;
         }
 
+        /* TITRE PROGRAMME EN OR */
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: #fff; /* Texte blanc pour ressortir sur l'image */
-            letter-spacing: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 10px;
             text-transform: uppercase;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             font-weight: 400;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            color: #d4af37;
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
         }
 
-        /* NAVIGATION VERTICALE STYLE "PROGRAMME" */
         .nav-list {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 25px;
             width: 100%;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: inline-block;
+            transition: 0.5s ease;
+        }
+
+        /* NOUVELLE POLICE : CINZEL (Luxe et Lisibilité) */
+        .nav-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem; 
+            display: block;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            
+            /* Dégradé Or Métallique puissant */
+            background: linear-gradient(to bottom, #bf953f 22%, #fcf6ba 45%, #b38728 50%, #fbf5b7 67%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Ombre forte pour détacher du fond clair */
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.9));
             transition: 0.4s;
         }
 
-        .nav-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem; 
-            font-style: italic;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
-        }
-
         .nav-link:hover .nav-title {
-            opacity: 0.7;
             transform: scale(1.05);
-            color: #d4af37; /* Teinte dorée au survol */
+            filter: drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.6));
         }
 
-        /* BOUTON RETOUR */
+        .divider {
+            width: 60px;
+            height: 1.5px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
         .back-home {
             position: absolute;
             bottom: 40px;
@@ -92,10 +102,18 @@
             text-decoration: none;
             font-size: 10px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 1px solid #fff;
-            padding-bottom: 5px;
-            opacity: 0.8;
+            letter-spacing: 5px;
+            opacity: 0.7;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .back-home:hover { 
+            opacity: 1; 
+            border-color: #d4af37;
+            color: #f9e5a1;
         }
     </style>
 </head>
@@ -110,17 +128,20 @@
             <a href="mairie.html" class="nav-link">
                 <span class="nav-title">Mairie</span>
             </a>
+            <div class="divider"></div>
 
             <a href="houppa.html" class="nav-link">
                 <span class="nav-title">Houppa</span>
             </a>
+            <div class="divider"></div>
 
             <a href="chabbat.html" class="nav-link">
                 <span class="nav-title">Chabbat</span>
             </a>
+            <div class="divider"></div>
 
             <a href="reponse.html" class="nav-link">
-                <span class="nav-title">Votre réponse</span>
+                <span class="nav-title">Réponse</span>
             </a>
         </div>
 

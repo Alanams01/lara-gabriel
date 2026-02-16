@@ -4,156 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mairie - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Cinzel&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body, html { 
-            height: 100%; 
-            width: 100%; 
-            background: #fff;
-            font-family: 'Cormorant Garamond', serif; 
-            color: #1a1a1a;
-            overflow-x: hidden; 
+            height: 100dvh; width: 100%; 
+            background-color: #000; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow: hidden; 
+        }
+
+        /* ARRIÈRE-PLAN : Image dézoomée */
+        .bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('page.jpeg') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
         }
 
         .main-ui {
-            min-height: 100vh;
+            position: relative; 
+            z-index: 10; 
+            height: 100dvh; 
             display: flex; 
-            flex-direction: column; 
             align-items: center; 
             justify-content: center;
-            padding: 40px 25px;
-            background: radial-gradient(circle, #ffffff 0%, #fdfbf7 100%);
+            padding: 20px;
         }
 
-        /* CARTE STYLE HAUTE PARFUMERIE */
-        .info-card {
-            background: #ffffff;
-            padding: 60px 35px;
-            width: 100%;
-            max-width: 500px;
+        /* LE VOILE BLANC TRANSLUCIDE (Inspiré de ta maquette) */
+        .overlay-card {
+            background: rgba(255, 255, 255, 0.45); /* Voile blanc translucide */
+            backdrop-filter: blur(10px); /* Effet flouté derrière la carte */
+            -webkit-backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 20px;
             text-align: center;
-            position: relative;
-            /* Bordure double très fine pour le luxe */
-            border: 0.5px solid #d4af37;
-            outline: 4px solid #fff;
-            outline-offset: -10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #1a1a1a;
         }
 
-        .heart {
-            color: #d4af37;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            display: block;
-            opacity: 0.8;
-        }
-
-        .intro-text {
-            font-size: 1.6rem;
-            font-style: italic;
-            margin-bottom: 45px;
-            line-height: 1.2;
-            color: #2c2c2c;
-            font-weight: 300;
-        }
-
-        .main-title {
-            font-family: 'Cinzel Decorative', cursive;
-            color: #d4af37;
-            font-size: 2.2rem;
-            letter-spacing: 6px;
-            margin-bottom: 25px;
+        /* STYLE DU TITRE SCRIPT */
+        .script-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.8rem;
+            color: #c39d7b; /* Couleur sable dorée */
+            margin-bottom: 20px;
             font-weight: 400;
         }
 
-        /* BLOC UNIQUE POUR MAIRIE + AFTER */
-        .event-details {
-            margin-bottom: 40px;
-        }
-
-        .time {
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
-            font-weight: 500;
-        }
-
-        .location-name {
-            font-family: 'Cinzel Decorative', cursive;
+        .intro {
             font-size: 1.1rem;
-            color: #1a1a1a;
-            margin-bottom: 5px;
-            display: block;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #333;
         }
 
-        .address {
-            font-size: 1.05rem;
-            color: #666;
-            font-style: italic;
-            line-height: 1.6;
+        .event-info {
             margin-bottom: 25px;
         }
 
-        /* TEXTE DE LIAISON DISCRET */
-        .transition-text {
-            font-size: 1rem;
+        .date-time {
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #d4af37;
-            margin: 30px 0;
-            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
         }
 
+        .location {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .address {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: #c39d7b;
+            margin: 20px auto;
+            opacity: 0.5;
+        }
+
+        /* BOUTON RETOUR STYLE SABLE */
         .back-btn {
             margin-top: 30px;
             display: inline-block;
+            background: #c39d7b;
+            color: #fff;
             text-decoration: none;
-            color: #1a1a1a;
+            padding: 12px 35px;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0.5;
-            transition: 0.4s;
-            border-bottom: 1px solid transparent;
+            letter-spacing: 3px;
+            transition: 0.3s;
         }
 
         .back-btn:hover {
-            opacity: 1;
-            border-bottom: 1px solid #d4af37;
+            background: #b08968;
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-container"></div>
+
     <div class="main-ui">
-        <div class="info-card">
-            <span class="heart">❦</span>
+        <div class="overlay-card">
             
-            <p class="intro-text">
-                Lara & Gabriel se diront "oui" <br> 
-                le mardi 16 juin 2026
+            <h1 class="script-title">Mairie</h1>
+
+            <p class="intro">
+                Lara et Gabriel se diront<br>
+                « Oui »
             </p>
 
-            <h2 class="main-title">Mairie</h2>
+            <div class="event-info">
+                <span class="date-time">Le 16 Juin 2026 à 15h00</span>
+                <span class="location">Mairie de Levallois</span>
+                <p class="address">1 place de la République, 92300 Levallois</p>
+            </div>
 
-            <div class="event-details">
-                <span class="time">À 15h00</span>
-                <span class="location-name">Mairie de Levallois Perret</span>
-                <p class="address">
-                    1 place de la République, 92300 Levallois Perret
-                </p>
+            <div class="divider"></div>
 
-                <p class="transition-text">— Suivi de l' —</p>
-
-                <h2 class="main-title" style="font-size: 1.8rem;">After Mairie</h2>
-                <span class="location-name">Appartement « Montaigne » du Salon Hoche</span>
-                <p class="address">
-                    9 avenue Hoche, 75008 Paris
-                </p>
+            <div class="event-info">
+                <span class="date-time">After Mairie</span>
+                <span class="location">Salon Hoche</span>
+                <p class="address">9 avenue Hoche, 75008 Paris</p>
             </div>
 
             <a href="premiere-page.html" class="back-btn">Retour</a>

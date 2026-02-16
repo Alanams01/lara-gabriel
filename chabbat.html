@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chabbat - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Cinzel&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body, html { 
-            height: 100%; 
-            width: 100%; 
-            background-color: #000;
-            font-family: 'Cormorant Garamond', serif; 
-            color: #1a1a1a;
+            height: 100dvh; width: 100%; 
+            background-color: #000; 
+            font-family: 'Montserrat', sans-serif; 
             overflow: hidden; 
         }
 
-        /* ARRIÈRE-PLAN : kotel.png avec voile léger */
-        .bg-kotel {
+        /* ARRIÈRE-PLAN : Image dézoomée */
+        .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.55)), 
-                        url('kotel.png') no-repeat center center;
+            background: url('page.jpeg') no-repeat center center;
             background-size: cover;
             z-index: 1;
         }
@@ -30,133 +27,137 @@
         .main-ui {
             position: relative; 
             z-index: 10; 
-            height: 100vh; 
+            height: 100dvh; 
             display: flex; 
-            flex-direction: column; 
             align-items: center; 
             justify-content: center;
             padding: 20px;
         }
 
-        /* CARTE STYLE ÉCRIN SACRÉ */
-        .info-card {
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(10px);
-            padding: 50px 30px;
-            width: 100%;
-            max-width: 520px;
+        /* LE VOILE BLANC ÉLARGI ET ESPACÉ */
+        .overlay-card {
+            background: rgba(255, 255, 255, 0.45); /* */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            width: 92%;
+            max-width: 450px;
+            padding: 50px 25px; /* Plus d'espace intérieur */
             text-align: center;
+            border-radius: 2px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            color: #1a1a1a;
             position: relative;
-            border: 1.5px solid #d4af37;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .bsd {
             position: absolute;
-            top: 15px;
-            right: 20px;
+            top: 20px;
+            right: 25px;
             font-family: 'Assistant', sans-serif;
-            font-size: 13px;
-            color: #d4af37;
+            font-size: 11px;
+            color: #c39d7b; /* */
         }
 
-        .decorative-icon {
-            color: #d4af37;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .main-title {
-            font-family: 'Cinzel Decorative', cursive;
-            color: #d4af37;
-            font-size: 2.2rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-bottom: 35px;
+        /* TITRE SCRIPT VOLUMINEUX */
+        .script-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem; /* Plus grand */
+            color: #c39d7b; /* */
+            margin-bottom: 25px;
             font-weight: 400;
         }
 
         .hebrew-names {
             font-family: 'Assistant', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #1a1a1a;
-            margin-bottom: 35px;
+            margin-bottom: 40px; /* Plus d'espace */
             direction: rtl;
             font-weight: 300;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
         }
 
-        .event-details {
-            border-top: 1px solid rgba(212, 175, 55, 0.5);
-            padding-top: 35px;
+        .event-info {
+            margin-bottom: 30px;
         }
 
-        .date-text {
-            font-size: 1.8rem;
-            font-style: italic;
-            margin-bottom: 15px;
+        .date-time {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.95rem;
             display: block;
-            color: #2c2c2c;
-        }
-
-        .location-name {
-            font-family: 'Cinzel Decorative', cursive;
-            font-size: 1.5rem;
-            color: #1a1a1a;
             margin-bottom: 10px;
-            display: block;
+        }
+
+        .location {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
             letter-spacing: 2px;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .address {
-            font-size: 1.25rem;
-            color: #555;
-            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.85;
             line-height: 1.6;
         }
 
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #c39d7b; /* */
+            margin: 30px auto;
+            opacity: 0.4;
+        }
+
         .back-btn {
-            margin-top: 45px;
+            margin-top: 20px;
             display: inline-block;
+            background: #c39d7b; /* */
+            color: #fff;
             text-decoration: none;
-            color: #1a1a1a;
-            font-size: 12px;
+            padding: 14px 45px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            opacity: 0.8;
-            border-bottom: 1px solid #d4af37;
-            padding-bottom: 5px;
+            letter-spacing: 4px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #b08968;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-kotel"></div>
+    <div class="bg-container"></div>
 
     <div class="main-ui">
-        <div class="info-card">
+        <div class="overlay-card">
             <span class="bsd">בס"ד</span>
             
-            <span class="decorative-icon">❦</span>
-            
-            <h1 class="main-title">Chabbat Hatan</h1>
+            <h1 class="script-title">Chabbat Hatan</h1>
 
             <div class="hebrew-names">
                 לרה & גבריאל
             </div>
 
-            <div class="event-details">
-                <span class="date-text">26 et 27 Juin 2026</span>
-                
-                <span class="location-name">CEJ</span>
+            <div class="event-info">
+                <span class="date-time">26 et 27 Juin 2026</span>
+                <span class="location">Centre Européen (CEJ)</span>
                 <p class="address">
                     Place de Jérusalem<br>
                     75017 Paris
                 </p>
             </div>
 
-            <a href="premiere-page.html" class="back-btn">Retour au programme</a>
+            <div class="divider"></div>
+
+            <a href="premiere-page.html" class="back-btn">Retour</a>
         </div>
     </div>
 
