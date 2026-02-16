@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Houppa - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Cinzel:wght@400;700&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Cinzel:wght@700&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -15,12 +15,10 @@
             overflow: hidden; 
         }
 
-        /* AJUSTEMENT PLEIN ÉCRAN TOTAL */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: url('page.png') no-repeat center center;
-            /* Force l'image à prendre 100% de la largeur et de la hauteur pour mobile */
             background-size: 100% 100%; 
             z-index: 1;
         }
@@ -35,112 +33,128 @@
             padding: 20px;
         }
 
-        /* VOILE BLANC ÉLÉGANT ET ESPACÉ */
         .overlay-card {
-            background: rgba(255, 255, 255, 0.45); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             width: 92%;
             max-width: 450px;
-            padding: 50px 25px; 
+            /* On garde le padding haut/bas mais on gère l'image différemment */
+            padding: 0 0 40px 0; 
             text-align: center;
             border-radius: 2px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             color: #1a1a1a;
             position: relative;
+            overflow: hidden; /* Pour que l'image ne dépasse pas des coins arrondis */
         }
 
         .bsd {
             position: absolute;
-            top: 20px;
-            right: 25px;
+            top: 15px;
+            right: 20px;
             font-family: 'Assistant', sans-serif;
             font-size: 11px;
-            color: #c39d7b; /* Couleur sable */
+            color: #c39d7b;
+            z-index: 11;
+        }
+
+        /* IMAGE TRES GRANDE - TOUTE LA LONGUEUR */
+        .header-image {
+            width: 100%; 
+            height: auto;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        /* Conteneur pour le texte afin de garder des marges sur les côtés */
+        .content-padding {
+            padding: 0 25px;
         }
 
         .script-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.2rem;
-            color: #c39d7b; /* Couleur sable */
-            margin-bottom: 20px;
+            font-size: 3.8rem;
+            color: #3d2b1f; 
+            margin-bottom: 10px;
             font-weight: 400;
         }
 
         .hebrew-names {
             font-family: 'Assistant', sans-serif;
-            font-size: 2.2rem;
-            color: #1a1a1a;
-            margin-bottom: 35px;
+            font-size: 2rem;
+            color: #3d2b1f; 
+            margin-bottom: 25px;
             direction: rtl;
             font-weight: 300;
             letter-spacing: 5px;
         }
 
         .event-info {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .date-text {
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #1a1a1a;
         }
 
         .time-badge {
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: #c39d7b; /* Couleur sable */
+            font-size: 1.05rem;
+            color: #3d2b1f; 
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
         .location {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 700;
+            color: #3d2b1f;
         }
 
         .address {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            line-height: 1.4;
             font-style: italic;
         }
 
         .divider {
-            width: 50px;
+            width: 45px;
             height: 1px;
-            background: #c39d7b; /* Couleur sable */
-            margin: 35px auto;
+            background: #c39d7b; 
+            margin: 25px auto;
             opacity: 0.4;
         }
 
         .back-btn {
-            margin-top: 10px;
             display: inline-block;
-            background: #c39d7b; /* Couleur sable */
+            background: #c39d7b; 
             color: #fff;
             text-decoration: none;
-            padding: 16px 50px;
-            font-size: 0.85rem;
+            padding: 14px 45px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             transition: 0.3s ease;
+            font-weight: 700;
         }
 
         .back-btn:hover {
             background: #b08968;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -152,26 +166,30 @@
         <div class="overlay-card">
             <span class="bsd">בס"ד</span>
             
-            <h1 class="script-title">Houppa</h1>
+            <img src="hebreu.png" alt="Hébreu" class="header-image">
 
-            <div class="hebrew-names">
-                לרה & גבריאל
+            <div class="content-padding">
+                <h1 class="script-title">Houppa</h1>
+
+                <div class="hebrew-names">
+                    לרה & גבריאל
+                </div>
+
+                <div class="event-info">
+                    <span class="date-text">Dimanche 21 Juin 2026</span>
+                    <span class="time-badge">À 17H00 PRÉCISES</span>
+                    
+                    <span class="location">Pavillon Dauphine</span>
+                    <p class="address">
+                        Place du Maréchal de Lattre de Tassigny<br>
+                        75116 Paris
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <a href="premiere-page.html" class="back-btn">Retour</a>
             </div>
-
-            <div class="event-info">
-                <span class="date-text">Dimanche 21 Juin 2026</span>
-                <span class="time-badge">À 17H00 PRÉCISES</span>
-                
-                <span class="location">Pavillon Dauphine</span>
-                <p class="address">
-                    Place du Maréchal de Lattre de Tassigny<br>
-                    75116 Paris
-                </p>
-            </div>
-
-            <div class="divider"></div>
-
-            <a href="premiere-page.html" class="back-btn">Retour</a>
         </div>
     </div>
 
