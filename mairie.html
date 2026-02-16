@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mairie - Lara & Gabriel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body, html { 
+            height: 100%; 
+            width: 100%; 
+            background: #fff;
+            font-family: 'Cormorant Garamond', serif; 
+            color: #1a1a1a;
+            overflow-x: hidden; 
+        }
+
+        .main-ui {
+            min-height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            padding: 40px 25px;
+            background: radial-gradient(circle, #ffffff 0%, #fdfbf7 100%);
+        }
+
+        /* CARTE STYLE HAUTE PARFUMERIE */
+        .info-card {
+            background: #ffffff;
+            padding: 60px 35px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            /* Bordure double très fine pour le luxe */
+            border: 0.5px solid #d4af37;
+            outline: 4px solid #fff;
+            outline-offset: -10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+        }
+
+        .heart {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .intro-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 45px;
+            line-height: 1.2;
+            color: #2c2c2c;
+            font-weight: 300;
+        }
+
+        .main-title {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #d4af37;
+            font-size: 2.2rem;
+            letter-spacing: 6px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        /* BLOC UNIQUE POUR MAIRIE + AFTER */
+        .event-details {
+            margin-bottom: 40px;
+        }
+
+        .time {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .location-name {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .address {
+            font-size: 1.05rem;
+            color: #666;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* TEXTE DE LIAISON DISCRET */
+        .transition-text {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0.5;
+            transition: 0.4s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .back-btn:hover {
+            opacity: 1;
+            border-bottom: 1px solid #d4af37;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-ui">
+        <div class="info-card">
+            <span class="heart">❦</span>
+            
+            <p class="intro-text">
+                Lara & Gabriel se diront "oui" <br> 
+                le mardi 16 juin 2026
+            </p>
+
+            <h2 class="main-title">Mairie</h2>
+
+            <div class="event-details">
+                <span class="time">À 15h00</span>
+                <span class="location-name">Mairie de Levallois Perret</span>
+                <p class="address">
+                    1 place de la République, 92300 Levallois Perret
+                </p>
+
+                <p class="transition-text">— Suivi de l' —</p>
+
+                <h2 class="main-title" style="font-size: 1.8rem;">After Mairie</h2>
+                <span class="location-name">Appartement « Montaigne » du Salon Hoche</span>
+                <p class="address">
+                    9 avenue Hoche, 75008 Paris
+                </p>
+            </div>
+
+            <a href="premiere-page.html" class="back-btn">Retour</a>
+        </div>
+    </div>
+
+</body>
+</html>

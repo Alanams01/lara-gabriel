@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chabbat - Lara & Gabriel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body, html { 
+            height: 100%; 
+            width: 100%; 
+            background-color: #000;
+            font-family: 'Cormorant Garamond', serif; 
+            color: #1a1a1a;
+            overflow: hidden; 
+        }
+
+        /* ARRIÈRE-PLAN : kotel.png avec voile léger */
+        .bg-kotel {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.55)), 
+                        url('kotel.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .main-ui {
+            position: relative; 
+            z-index: 10; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* CARTE STYLE ÉCRIN SACRÉ */
+        .info-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            padding: 50px 30px;
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+            position: relative;
+            border: 1.5px solid #d4af37;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .bsd {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: 'Assistant', sans-serif;
+            font-size: 13px;
+            color: #d4af37;
+        }
+
+        .decorative-icon {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .main-title {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #d4af37;
+            font-size: 2.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .hebrew-names {
+            font-family: 'Assistant', sans-serif;
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 35px;
+            direction: rtl;
+            font-weight: 300;
+            letter-spacing: 5px;
+        }
+
+        .event-details {
+            border-top: 1px solid rgba(212, 175, 55, 0.5);
+            padding-top: 35px;
+        }
+
+        .date-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+            color: #2c2c2c;
+        }
+
+        .location-name {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .address {
+            font-size: 1.25rem;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            margin-top: 45px;
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            opacity: 0.8;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-kotel"></div>
+
+    <div class="main-ui">
+        <div class="info-card">
+            <span class="bsd">בס"ד</span>
+            
+            <span class="decorative-icon">❦</span>
+            
+            <h1 class="main-title">Chabbat Hatan</h1>
+
+            <div class="hebrew-names">
+                לרה & גבריאל
+            </div>
+
+            <div class="event-details">
+                <span class="date-text">26 et 27 Juin 2026</span>
+                
+                <span class="location-name">CEJ</span>
+                <p class="address">
+                    Place de Jérusalem<br>
+                    75017 Paris
+                </p>
+            </div>
+
+            <a href="premiere-page.html" class="back-btn">Retour au programme</a>
+        </div>
+    </div>
+
+</body>
+</html>
