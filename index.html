@@ -45,8 +45,9 @@
         }
 
         .names-container {
-            margin-bottom: 80px;
-            /* Animation d'apparition fluide */
+            /* AJUSTEMENT HAUTEUR : Valeur modifiée pour remonter le bloc */
+            margin-top: -15dvh; 
+            margin-bottom: 50px;
             animation: fadeIn 2.5s ease-in-out;
         }
 
@@ -54,10 +55,9 @@
         .names {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(3.5rem, 15vw, 6rem);
-            color: #3d2b1f; /* Marron signature */
+            color: #3d2b1f; 
             font-weight: 400;
             line-height: 1.2;
-            /* Halo de lumière très diffus pour l'élégance */
             text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.9), 0px 0px 10px rgba(255, 255, 255, 0.5);
             letter-spacing: 2px;
         }
@@ -73,7 +73,7 @@
             color: #3d2b1f;
             font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 8px; /* Très espacé pour le côté luxe */
+            letter-spacing: 8px; 
             margin-top: 15px;
             font-weight: 400;
             opacity: 0.9;
@@ -92,7 +92,7 @@
             font-size: 11px; 
             text-transform: uppercase;
             letter-spacing: 5px; 
-            background: #c39d7b; /* Sable */
+            background: #c39d7b; 
             transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 400;
             border: 1px solid rgba(255,255,255,0.2);
@@ -100,11 +100,11 @@
 
         .cta-center:hover {
             background: #b08968;
-            letter-spacing: 7px; /* Effet d'expansion au survol */
+            letter-spacing: 7px; 
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
