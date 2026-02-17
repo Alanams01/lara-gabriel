@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Houppa - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&family=Cinzel:wght@600;800&family=Assistant:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&family=Cinzel:wght@600;800&family=Assistant:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -26,7 +26,7 @@
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.2); /* Voile légèrement plus opaque pour aider la lecture */
+            background: rgba(255, 255, 255, 0.15); 
             z-index: 2;
         }
 
@@ -42,37 +42,24 @@
             text-align: center;
         }
 
-        /* MARRON PLUS PROFOND ET CONTOUR LÉGER */
-        .text-bold-style {
-            color: #2a1a0f; 
-            -webkit-text-stroke: 0.3px rgba(255,255,255,0.5);
-            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
-        }
-
         .bsd {
             position: absolute;
-            top: 10px;
+            top: 15px;
             right: 20px;
             font-family: 'Assistant', sans-serif;
             font-size: 10px;
             color: #8b6b4d;
             font-weight: 700;
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
         }
 
-        .header-image {
-            width: 100%; 
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 5px;
-            filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
-        }
-
+        /* TITRE HOUPPA REHAUSSÉ */
         .script-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem; 
-            color: #2a1a0f; 
-            margin-bottom: 12px;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+            font-size: 4rem; 
+            color: #3d2b1f; 
+            margin-bottom: 25px;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1), 0px 0px 5px rgba(255, 255, 255, 0.8);
         }
 
         .family-grid {
@@ -82,41 +69,46 @@
             max-width: 480px;
             margin-bottom: 15px;
             font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            color: #2a1a0f;
+            font-size: 0.72rem;
+            color: #3d2b1f;
             line-height: 1.5;
             font-weight: 800;
         }
 
         .family-column {
             flex: 1;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 5px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         }
 
         .family-left { text-align: left; padding-right: 5px; }
         .family-right { text-align: right; padding-left: 5px; }
 
         .invitation-text {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #1a1a1a;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-style: italic;
             font-weight: 700;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+            max-width: 90%;
         }
 
         .names-intro {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.6rem;
-            color: #2a1a0f;
-            margin-bottom: 12px;
+            font-size: 3.5rem;
+            color: #3d2b1f;
+            margin-bottom: 15px;
             text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+        }
+
+        .event-details {
+            margin-bottom: 15px;
         }
 
         .date-text {
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 8px;
             color: #1a1a1a;
             letter-spacing: 1px;
@@ -127,14 +119,14 @@
             font-family: 'Cinzel', serif;
             font-size: 1.25rem;
             letter-spacing: 2px;
-            font-weight: 900;
-            color: #2a1a0f;
+            font-weight: 800;
+            color: #3d2b1f;
             margin-bottom: 5px;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
         .address-detail {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #1a1a1a;
             font-weight: 700;
             line-height: 1.4;
@@ -142,27 +134,28 @@
         }
 
         .divider {
-            width: 60px;
-            height: 1.5px;
-            background: #8b6b4d;
+            width: 50px;
+            height: 1px;
+            background: #c39d7b;
             margin: 15px auto;
+            opacity: 0.8;
         }
 
         .memory-text {
-            font-size: 0.7rem;
-            color: #2a1a0f;
-            max-width: 95%;
+            font-size: 0.68rem;
+            color: #3d2b1f;
+            max-width: 92%;
             margin-top: 15px;
             font-style: italic;
-            font-weight: 700;
-            line-height: 1.5;
+            font-weight: 600;
+            line-height: 1.4;
             text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
         }
 
         .back-btn {
-            margin-top: 15px;
+            margin-top: 20px;
             display: inline-block;
-            background: #8b6b4d; 
+            background: #c39d7b; 
             color: #fff;
             text-decoration: none;
             padding: 12px 45px;
@@ -182,8 +175,6 @@
     <div class="main-ui">
         <span class="bsd">בס"ד</span>
         
-        <img src="hebreu.png" alt="Hébreu" class="header-image">
-
         <h1 class="script-title">Houppa</h1>
 
         <div class="family-grid">
