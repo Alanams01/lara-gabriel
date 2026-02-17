@@ -15,6 +15,7 @@
             overflow: hidden; 
         }
 
+        /* FOND PLEIN ÉCRAN TOTAL */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -23,29 +24,24 @@
             z-index: 1;
         }
 
+        /* EFFET FONDU UNIFICATEUR */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.1); 
+            z-index: 2;
+        }
+
         .main-ui {
             position: relative; 
             z-index: 10; 
             height: 100dvh; 
             display: flex; 
+            flex-direction: column;
             align-items: center; 
             justify-content: center;
             padding: 20px;
-        }
-
-        .overlay-card {
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            width: 92%;
-            max-width: 450px;
-            /* On garde le padding haut/bas mais on gère l'image différemment */
-            padding: 0 0 40px 0; 
             text-align: center;
-            border-radius: 2px;
-            color: #1a1a1a;
-            position: relative;
-            overflow: hidden; /* Pour que l'image ne dépasse pas des coins arrondis */
         }
 
         .bsd {
@@ -55,38 +51,38 @@
             font-family: 'Assistant', sans-serif;
             font-size: 11px;
             color: #c39d7b;
-            z-index: 11;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
-        /* IMAGE TRES GRANDE - TOUTE LA LONGUEUR */
+        /* IMAGE HÉBREU FLOTTANTE TRÈS GRANDE */
         .header-image {
             width: 100%; 
+            max-width: 450px;
             height: auto;
             display: block;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
         }
 
-        /* Conteneur pour le texte afin de garder des marges sur les côtés */
-        .content-padding {
-            padding: 0 25px;
-        }
-
+        /* TITRE SCRIPT MARRON FONDU */
         .script-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             color: #3d2b1f; 
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 400;
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
         }
 
         .hebrew-names {
             font-family: 'Assistant', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #3d2b1f; 
             margin-bottom: 25px;
             direction: rtl;
             font-weight: 300;
             letter-spacing: 5px;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
         }
 
         .event-info {
@@ -97,59 +93,65 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #1a1a1a;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
         .time-badge {
             font-family: 'Cinzel', serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #3d2b1f; 
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 700;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
         }
 
         .location {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 700;
             color: #3d2b1f;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
         }
 
         .address {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #1a1a1a;
             font-weight: 600;
-            line-height: 1.4;
+            line-height: 1.6;
             font-style: italic;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
         .divider {
-            width: 45px;
+            width: 50px;
             height: 1px;
             background: #c39d7b; 
-            margin: 25px auto;
-            opacity: 0.4;
+            margin: 30px auto;
+            opacity: 0.6;
         }
 
+        /* BOUTON SABLE COHÉRENT */
         .back-btn {
             display: inline-block;
             background: #c39d7b; 
             color: #fff;
             text-decoration: none;
-            padding: 14px 45px;
-            font-size: 0.8rem;
+            padding: 16px 55px;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             transition: 0.3s ease;
             font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .back-btn:hover {
@@ -161,36 +163,33 @@
 <body>
 
     <div class="bg-container"></div>
+    <div class="bg-overlay"></div>
 
     <div class="main-ui">
-        <div class="overlay-card">
-            <span class="bsd">בס"ד</span>
-            
-            <img src="hebreu.png" alt="Hébreu" class="header-image">
+        <span class="bsd">בס"ד</span>
+        
+        <img src="hebreu.png" alt="Hébreu" class="header-image">
 
-            <div class="content-padding">
-                <h1 class="script-title">Houppa</h1>
+        <h1 class="script-title">Houppa</h1>
 
-                <div class="hebrew-names">
-                    לרה & גבריאל
-                </div>
-
-                <div class="event-info">
-                    <span class="date-text">Dimanche 21 Juin 2026</span>
-                    <span class="time-badge">À 17H00 PRÉCISES</span>
-                    
-                    <span class="location">Pavillon Dauphine</span>
-                    <p class="address">
-                        Place du Maréchal de Lattre de Tassigny<br>
-                        75116 Paris
-                    </p>
-                </div>
-
-                <div class="divider"></div>
-
-                <a href="premiere-page.html" class="back-btn">Retour</a>
-            </div>
+        <div class="hebrew-names">
+            לרה & גבריאל
         </div>
+
+        <div class="event-info">
+            <span class="date-text">Dimanche 21 Juin 2026</span>
+            <span class="time-badge">À 17H00 PRÉCISES</span>
+            
+            <span class="location">Pavillon Dauphine</span>
+            <p class="address">
+                Place du Maréchal de Lattre de Tassigny<br>
+                75116 Paris
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="premiere-page.html" class="back-btn">Retour</a>
     </div>
 
 </body>
