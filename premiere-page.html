@@ -28,7 +28,7 @@
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.15); 
+            background: rgba(255, 255, 255, 0.18); 
             z-index: 2;
         }
 
@@ -44,24 +44,24 @@
             text-align: center;
         }
 
-        /* TITRE PROGRAMME REHAUSSÉ */
+        /* TITRE PROGRAMME PLUS GRAND */
         .main-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            letter-spacing: 8px;
+            font-size: 2.8rem; /* Augmenté de 2rem à 2.8rem */
+            letter-spacing: 12px;
             color: #3d2b1f;
             text-transform: uppercase;
-            margin-bottom: 40px; /* Réduit pour laisser de l'air en bas */
+            margin-bottom: 25px; 
             font-weight: 700;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
         }
 
         .nav-list {
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Gap légèrement réduit */
+            gap: 15px; 
             width: 100%;
-            margin-bottom: 60px; /* Espace ajouté sous la liste */
+            margin-bottom: 40px; 
         }
 
         .nav-link {
@@ -70,12 +70,13 @@
             transition: 0.3s ease;
         }
 
+        /* RUBRIQUES EN PLUS GROS */
         .nav-item {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
+            font-size: 3.8rem; 
             color: #3d2b1f; 
             font-weight: 400;
-            text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+            text-shadow: 0px 0px 25px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 0.8);
             transition: 0.3s;
         }
 
@@ -85,28 +86,28 @@
         }
 
         .divider {
-            width: 40px;
+            width: 50px;
             height: 1px;
             background: #c39d7b;
             margin: 0 auto;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
-        /* BOUTON RETOUR POSITIONNÉ PLUS BAS */
+        /* BOUTON RETOUR POSITIONNÉ BAS */
         .back-home {
             position: absolute;
-            bottom: 20px; /* Plus d'espace par rapport au menu */
+            bottom: 25px; 
             color: #ffffff;
             text-decoration: none;
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 5px;
             border: 1px solid #c39d7b;
-            padding: 12px 40px; /* Plus large pour l'élégance */
+            padding: 14px 45px; 
             background: #c39d7b;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .back-home:hover { 
