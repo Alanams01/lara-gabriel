@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -27,7 +27,7 @@
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.15); /* Légèrement plus blanc pour le contraste */
             z-index: 2;
         }
 
@@ -47,28 +47,33 @@
             animation: fadeIn 2.5s ease-in-out;
         }
 
-        /* RETOUR À LA FINESSE : FONT-WEIGHT 300 */
+        /* ÉCRITURE PLUS ACCENTUÉE ET NETTE */
         .names {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 11vw, 3.8rem);
             color: #3b1e2f; 
-            font-weight: 300; /* Très fin et classe */
+            font-weight: 500; /* Légèrement plus épais pour la visibilité */
             text-transform: uppercase;
-            letter-spacing: 14px; /* On augmente l'espace pour la lisibilité */
+            letter-spacing: 14px;
             line-height: 1.4;
-            /* Ombre plus douce pour ne pas "épaissir" la lettre */
-            text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
+            /* Le secret pour voir sans gras : un contour très fin + ombre dense */
+            -webkit-text-stroke: 0.5px #3b1e2f; 
+            text-shadow: 
+                0px 0px 15px rgba(255, 255, 255, 1), 
+                0px 0px 25px rgba(255, 255, 255, 0.8),
+                2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .ampersand {
             display: block;
             font-family: 'Great Vibes', cursive;
-            font-size: 2.8rem;
+            font-size: 3.2rem; /* Plus grand pour l'accentuer */
             color: #3b1e2f;
             text-transform: none;
             letter-spacing: 0;
             margin: -5px 0;
             font-weight: 400;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         }
 
         .subtitle {
@@ -78,7 +83,8 @@
             text-transform: uppercase;
             letter-spacing: 8px; 
             margin-top: 25px;
-            font-weight: 500;
+            font-weight: 700; /* Sous-titre bien visible */
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
         }
 
         .cta-container {
@@ -95,8 +101,8 @@
             letter-spacing: 5px; 
             background: #3b1e2f; 
             transition: 0.4s;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(59, 30, 47, 0.2);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 30, 47, 0.4);
         }
 
         @keyframes fadeIn {
