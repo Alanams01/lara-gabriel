@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -16,15 +16,21 @@
             overflow: hidden; 
         }
 
-        /* AJUSTEMENT PLEIN ÉCRAN TOTAL */
+        /* IMAGE DE FOND EN PLEIN ÉCRAN */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), 
-                        url('page.png') no-repeat center center;
-            /* Force l'image à prendre 100% de la largeur et 100% de la hauteur */
+            background: url('page.png') no-repeat center center;
             background-size: 100% 100%; 
             z-index: 1;
+        }
+
+        /* VOILE DE SOIE POUR LE CÔTÉ PRESTIGE */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.12);
+            z-index: 2;
         }
 
         .main-ui {
@@ -35,31 +41,31 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
-            padding: 20px;
             text-align: center;
         }
 
         .names-container {
-            margin-bottom: 40px;
-            /* Centre parfaitement le texte sur l'image ajustée */
-            margin-top: -5dvh; 
+            margin-bottom: 80px;
+            /* Animation d'apparition fluide */
+            animation: fadeIn 2.5s ease-in-out;
         }
 
+        /* ÉCRITURE SIGNATURE CLASSE */
         .names {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 11vw, 4rem);
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            color: #3d2b1f; /* Teinte sombre identique à la maquette */
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 15vw, 6rem);
+            color: #3d2b1f; /* Marron signature */
             font-weight: 400;
-            line-height: 1.1;
+            line-height: 1.2;
+            /* Halo de lumière très diffus pour l'élégance */
+            text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.9), 0px 0px 10px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
         }
 
         .ampersand {
-            display: block;
-            font-size: 1.8rem;
-            margin: 8px 0;
-            font-weight: 200;
+            font-size: 0.6em;
+            opacity: 0.8;
+            margin: 0 15px;
         }
 
         .subtitle {
@@ -67,12 +73,13 @@
             color: #3d2b1f;
             font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 8px; /* Très espacé pour le côté luxe */
             margin-top: 15px;
             font-weight: 400;
+            opacity: 0.9;
         }
 
-        /* BOUTON SABLE POSITIONNÉ */
+        /* BOUTON ÉPURÉ */
         .cta-container {
             position: absolute;
             bottom: 12dvh;
@@ -81,33 +88,42 @@
         .cta-center {
             text-decoration: none; 
             color: #fff; 
-            border: none;
-            padding: 14px 45px; 
-            font-size: 12px; 
+            padding: 15px 50px; 
+            font-size: 11px; 
             text-transform: uppercase;
-            letter-spacing: 4px; 
-            background: #c39d7b; /* Couleur sable précise */
-            transition: 0.4s;
-            font-weight: 500;
+            letter-spacing: 5px; 
+            background: #c39d7b; /* Sable */
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 400;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cta-center:hover {
+            background: #b08968;
+            letter-spacing: 7px; /* Effet d'expansion au survol */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
     <div class="bg-container"></div>
+    <div class="bg-overlay"></div>
 
     <div class="main-ui">
         <div class="names-container">
             <h1 class="names">
-                Lara
-                <span class="ampersand">&</span>
-                Gabriel
+                Lara <span class="ampersand">&</span> Gabriel
             </h1>
-            <p class="subtitle">— LA SUITE COMMENCE —</p>
+            <p class="subtitle">La suite commence</p>
         </div>
 
         <div class="cta-container">
-            <a href="premiere-page.html" class="cta-center">DÉCOUVRIR</a>
+            <a href="premiere-page.html" class="cta-center">Découvrir</a>
         </div>
     </div>
 
