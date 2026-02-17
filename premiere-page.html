@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Programme - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -28,7 +28,7 @@
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.18); 
+            background: rgba(255, 255, 255, 0.15); 
             z-index: 2;
         }
 
@@ -44,75 +44,76 @@
             text-align: center;
         }
 
-        /* TITRE PROGRAMME PLUS GRAND */
+        /* TITRE PROGRAMME AFFINÉ */
         .main-title {
             font-family: 'Cinzel', serif;
-            font-size: 2.8rem; /* Augmenté de 2rem à 2.8rem */
-            letter-spacing: 12px;
+            font-size: 1.6rem; 
+            letter-spacing: 10px;
             color: #3d2b1f;
             text-transform: uppercase;
-            margin-bottom: 25px; 
-            font-weight: 700;
-            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px; 
+            font-weight: 400;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
         }
 
         .nav-list {
             display: flex;
             flex-direction: column;
-            gap: 15px; 
+            gap: 12px; 
             width: 100%;
-            margin-bottom: 40px; 
+            margin-bottom: 50px; 
         }
 
         .nav-link {
             text-decoration: none;
             display: block;
-            transition: 0.3s ease;
+            transition: 0.4s ease;
         }
 
-        /* RUBRIQUES EN PLUS GROS */
+        /* RUBRIQUES AJUSTÉES POUR PLUS D'ÉLÉGANCE */
         .nav-item {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.8rem; 
+            font-size: 3rem; 
             color: #3d2b1f; 
             font-weight: 400;
-            text-shadow: 0px 0px 25px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
             transition: 0.3s;
         }
 
         .nav-link:hover .nav-item {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-
-        .divider {
-            width: 50px;
-            height: 1px;
-            background: #c39d7b;
-            margin: 0 auto;
+            transform: scale(1.03);
             opacity: 0.7;
         }
 
-        /* BOUTON RETOUR POSITIONNÉ BAS */
+        .divider {
+            width: 35px;
+            height: 1px;
+            background: #c39d7b;
+            margin: 0 auto;
+            opacity: 0.5;
+        }
+
+        /* BOUTON RETOUR ÉLÉGANT */
         .back-home {
             position: absolute;
-            bottom: 25px; 
+            bottom: 35px; 
             color: #ffffff;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            border: 1px solid #c39d7b;
-            padding: 14px 45px; 
+            letter-spacing: 4px;
+            border: 1px solid rgba(195, 157, 123, 0.6);
+            padding: 12px 35px; 
             background: #c39d7b;
-            font-weight: 700;
+            font-weight: 600;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .back-home:hover { 
             background: #b08968;
             border-color: #b08968;
+            transform: translateY(-2px);
         }
     </style>
 </head>
