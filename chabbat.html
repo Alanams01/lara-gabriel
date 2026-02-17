@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chabbat - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Cinzel:wght@700&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&family=Cinzel:wght@700;800&family=Assistant:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -24,11 +24,11 @@
             z-index: 1;
         }
 
-        /* EFFET FONDU UNIFICATEUR */
+        /* VOILE LÉGER POUR UNIFIER LE FOND */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.15); 
             z-index: 2;
         }
 
@@ -51,91 +51,86 @@
             font-family: 'Assistant', sans-serif;
             font-size: 11px;
             color: #c39d7b;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
         }
 
-        /* TITRE SCRIPT MARRON FONDU */
+        /* TITRE SCRIPT - RETOUR AU MARRON DOUX AVEC HALO INTENSE */
         .script-title {
             font-family: 'Great Vibes', cursive;
             font-size: 4.2rem;
             color: #3d2b1f; 
-            margin-bottom: 20px;
-            font-weight: 400;
-            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            /* Le halo blanc multi-couches permet de voir le texte sur n'importe quel fond */
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1), 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
         .hebrew-names {
             font-family: 'Assistant', sans-serif;
             font-size: 2.2rem;
             color: #3d2b1f; 
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             direction: rtl;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 5px;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
         .event-info {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .date-time {
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             display: block;
             margin-bottom: 10px;
             color: #1a1a1a;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         }
 
         .location {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             letter-spacing: 2px;
             display: block;
             margin-bottom: 8px;
-            font-weight: 700;
+            font-weight: 800;
             color: #3d2b1f;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
         .address {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #1a1a1a;
             font-weight: 600;
-            line-height: 1.6;
+            line-height: 1.5;
             font-style: italic;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
         }
 
         .divider {
             width: 50px;
             height: 1px;
             background: #c39d7b; 
-            margin: 30px auto;
-            opacity: 0.6;
+            margin: 25px auto;
+            opacity: 0.7;
         }
 
-        /* BOUTON SABLE COHÉRENT */
+        /* BOUTON SABLE */
         .back-btn {
             display: inline-block;
             background: #c39d7b; 
             color: #fff;
             text-decoration: none;
-            padding: 16px 55px;
-            font-size: 0.85rem;
+            padding: 14px 50px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             transition: 0.3s ease;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .back-btn:hover {
-            background: #b08968;
-            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
