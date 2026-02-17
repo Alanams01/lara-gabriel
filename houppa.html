@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Houppa - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Cinzel:wght@700&family=Assistant:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&family=Cinzel:wght@500;700&family=Assistant:wght@400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -15,7 +15,6 @@
             overflow: hidden; 
         }
 
-        /* FOND PLEIN ÉCRAN TOTAL */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -24,11 +23,10 @@
             z-index: 1;
         }
 
-        /* EFFET FONDU UNIFICATEUR */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.18); 
             z-index: 2;
         }
 
@@ -40,123 +38,139 @@
             flex-direction: column;
             align-items: center; 
             justify-content: center;
-            padding: 20px;
+            padding: 10px 20px;
             text-align: center;
         }
 
         .bsd {
             position: absolute;
-            top: 15px;
+            top: 10px;
             right: 20px;
             font-family: 'Assistant', sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             color: #c39d7b;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
         }
 
-        /* IMAGE HÉBREU FLOTTANTE TRÈS GRANDE */
         .header-image {
             width: 100%; 
-            max-width: 450px;
+            max-width: 320px;
             height: auto;
-            display: block;
-            margin-bottom: 10px;
-            filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
+            margin-bottom: 5px;
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.6));
         }
 
-        /* TITRE SCRIPT MARRON FONDU */
         .script-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.2rem;
+            font-size: 2.8rem; 
             color: #3d2b1f; 
-            margin-bottom: 5px;
-            font-weight: 400;
-            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
-        .hebrew-names {
-            font-family: 'Assistant', sans-serif;
-            font-size: 2.2rem;
-            color: #3d2b1f; 
-            margin-bottom: 25px;
-            direction: rtl;
-            font-weight: 300;
-            letter-spacing: 5px;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        .event-info {
+        /* GRILLE FAMILLES - POLICE CINZEL POUR LA LISIBILITÉ */
+        .family-grid {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
             margin-bottom: 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            color: #1a1a1a;
+            line-height: 1.6;
+            font-weight: 700;
+        }
+
+        .family-column {
+            flex: 1;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
+        }
+
+        .family-left { text-align: left; padding-right: 5px; }
+        .family-right { text-align: right; padding-left: 5px; }
+
+        .invitation-text {
+            font-size: 0.8rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-style: italic;
+            font-weight: 700;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+            max-width: 90%;
+        }
+
+        .names-intro {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2rem;
+            color: #3d2b1f;
+            margin-bottom: 15px;
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+        }
+
+        .event-details {
+            margin-bottom: 15px;
         }
 
         .date-text {
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 1rem;
-            display: block;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .time-badge {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: #3d2b1f; 
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 25px;
-            font-weight: 700;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        .location {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-            display: block;
+            font-size: 0.9rem;
             margin-bottom: 8px;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+        }
+
+        .location-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
             font-weight: 700;
             color: #3d2b1f;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
-        .address {
-            font-size: 0.95rem;
+        .address-detail {
+            font-size: 0.8rem;
             color: #1a1a1a;
-            font-weight: 600;
-            line-height: 1.6;
+            font-weight: 700;
+            line-height: 1.4;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+        }
+
+        .memory-text {
+            font-size: 0.65rem;
+            color: #3d2b1f;
+            max-width: 95%;
+            margin-top: 15px;
             font-style: italic;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            font-weight: 700;
+            line-height: 1.5;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
         }
 
         .divider {
-            width: 50px;
+            width: 60px;
             height: 1px;
-            background: #c39d7b; 
-            margin: 30px auto;
-            opacity: 0.6;
+            background: #c39d7b;
+            margin: 15px auto;
+            opacity: 0.8;
         }
 
-        /* BOUTON SABLE COHÉRENT */
         .back-btn {
+            margin-top: 15px;
             display: inline-block;
             background: #c39d7b; 
             color: #fff;
             text-decoration: none;
-            padding: 16px 55px;
-            font-size: 0.85rem;
+            padding: 12px 45px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            transition: 0.3s ease;
+            letter-spacing: 4px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .back-btn:hover {
-            background: #b08968;
-            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -172,22 +186,36 @@
 
         <h1 class="script-title">Houppa</h1>
 
-        <div class="hebrew-names">
-            לרה & גבריאל
+        <div class="family-grid">
+            <div class="family-column family-left">
+                ILDA ET ERIC GARBAY<br>
+                LOUISE HAZAN<br>
+                ELIANE TAILLET<br>
+                STÉPHANIE ET ARIÉ HAZAN
+            </div>
+            <div class="family-column family-right">
+                JOCELYNE ET JEAN ALBERT HAZOUT<br>
+                DANY ET BENJAMIN BENAIM<br>
+                RAKEL HAZOUT<br>
+                MICKAEL BENAIM
+            </div>
         </div>
 
-        <div class="event-info">
-            <span class="date-text">Dimanche 21 Juin 2026</span>
-            <span class="time-badge">À 17H00 PRÉCISES</span>
-            
-            <span class="location">Pavillon Dauphine</span>
-            <p class="address">
-                Place du Maréchal de Lattre de Tassigny<br>
-                75116 Paris
-            </p>
+        <p class="invitation-text">Ont l'honneur de vous convier au mariage de leurs enfants et petits enfants :</p>
+
+        <div class="names-intro">Lara & Gabriel</div>
+
+        <div class="event-details">
+            <p class="date-text">Dimanche 21 juin 2026 à 17H00 Précises</p>
+            <h2 class="location-name">Pavillon Dauphine</h2>
+            <p class="address-detail">Place du maréchal de lattre de Tassigny, 75116 Paris</p>
         </div>
 
         <div class="divider"></div>
+
+        <p class="memory-text">
+            En ce jours si précieux nous portons dans nos coeurs le souvenir béni de nos chers parents et grands-parents Armand Hazan za'l et Georgette Abitbol za'l
+        </p>
 
         <a href="premiere-page.html" class="back-btn">Retour</a>
     </div>
