@@ -24,11 +24,11 @@
             z-index: 1;
         }
 
-        /* EFFET FONDU : LÉGER VOILE SUR TOUTE L'IMAGE POUR UNIFIER */
+        /* EFFET FONDU UNIFICATEUR */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.15); 
             z-index: 2;
         }
 
@@ -44,54 +44,54 @@
             text-align: center;
         }
 
-        /* TITRE SCRIPT MARRON */
+        /* TITRE SECTION */
         .script-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.5rem;
+            font-size: 4.8rem;
             color: #3d2b1f; 
-            margin-bottom: 15px;
-            /* Halo blanc diffus pour le fondu et la lisibilité */
+            margin-bottom: 10px;
             text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
         }
 
-        .intro {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 35px;
+        /* BELLE ÉCRITURE POUR LARA ET GABRIEL */
+        .names-intro {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
             color: #3d2b1f;
-            font-weight: 700;
-            line-height: 1.4;
+            margin-bottom: 30px;
+            line-height: 1.2;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
         }
 
-        .event-info {
-            margin-bottom: 30px;
+        .event-group {
+            margin-bottom: 25px;
         }
 
         .date-time {
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
-        .location {
+        .location-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
             font-weight: 700;
             color: #3d2b1f;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
         }
 
-        .address {
-            font-size: 0.85rem;
+        .address-detail {
+            font-size: 0.8rem;
             color: #1a1a1a;
-            font-weight: 700;
+            font-weight: 600;
+            line-height: 1.4;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
@@ -99,13 +99,13 @@
             width: 40px;
             height: 1px;
             background: #c39d7b;
-            margin: 25px auto;
-            opacity: 0.6;
+            margin: 20px auto;
+            opacity: 0.7;
         }
 
-        /* BOUTON SABLE FONDU */
+        /* BOUTON RETOUR */
         .back-btn {
-            margin-top: 20px;
+            margin-top: 25px;
             display: inline-block;
             background: #c39d7b; 
             color: #fff;
@@ -127,20 +127,22 @@
     <div class="main-ui">
         <h1 class="script-title">Mairie</h1>
 
-        <p class="intro">Lara et Gabriel se diront<br>« Oui »</p>
+        <div class="names-intro">
+            Lara et Gabriel se diront<br>« Oui »
+        </div>
 
-        <div class="event-info">
-            <span class="date-time">Mardi 16 Juin 2026 à 15h00</span>
-            <span class="location">Mairie de Levallois</span>
-            <p class="address">1 place de la République, Levallois</p>
+        <div class="event-group">
+            <p class="date-time">Le 16 Juin 2026 à 15h00</p>
+            <h2 class="location-name">À la Mairie de Levallois</h2>
+            <p class="address-detail">1 place de la République, 92300 Levallois-Perret</p>
         </div>
 
         <div class="divider"></div>
 
-        <div class="event-info">
-            <span class="date-time">After Mairie</span>
-            <span class="location">Salon Hoche</span>
-            <p class="address">9 avenue Hoche, Paris</p>
+        <div class="event-group">
+            <p class="date-time">En After Mairie</p>
+            <h2 class="location-name">Au Salon Hoche</h2>
+            <p class="address-detail">9 avenue Hoche, 75008 Paris</p>
         </div>
 
         <a href="premiere-page.html" class="back-btn">Retour</a>
