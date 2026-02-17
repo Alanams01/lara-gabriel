@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mairie - Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -15,7 +15,6 @@
             overflow: hidden; 
         }
 
-        /* IMAGE PLEIN ÉCRAN */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -24,11 +23,10 @@
             z-index: 1;
         }
 
-        /* EFFET FONDU UNIFICATEUR - LÉGÈREMENT PLUS SOMBRE POUR LE CONTRASTE */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.15); 
             z-index: 2;
         }
 
@@ -44,20 +42,24 @@
             text-align: center;
         }
 
-        /* TITRE SECTION - COULEUR PLUS FONCÉE */
-        .script-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.8rem;
-            color: #2a1a0f; 
-            margin-bottom: 10px;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+        /* COULEUR : VIOLET PRUNE (Aubergine Profond) */
+        .plum-text {
+            color: #3b1e2f; /* Un violet très sombre, terreux comme le marron */
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1), 0px 0px 5px rgba(255, 255, 255, 0.5);
         }
 
-        /* BELLE ÉCRITURE POUR LARA ET GABRIEL - PLUS FONCÉE */
+        .script-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #3b1e2f; 
+            margin-bottom: 5px;
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+        }
+
         .names-intro {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            color: #2a1a0f;
+            font-size: 2.5rem;
+            color: #3b1e2f;
             margin-bottom: 30px;
             line-height: 1.2;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
@@ -68,53 +70,53 @@
         }
 
         .date-time {
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.85rem;
-            color: #000; /* Passage au noir pour une lisibilité maximale */
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #2a1522; /* Encore plus sombre pour les détails */
+            margin-bottom: 8px;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         }
 
         .location-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             letter-spacing: 2px;
-            font-weight: 700;
-            color: #2a1a0f;
-            margin-bottom: 4px;
+            font-weight: 900;
+            color: #3b1e2f;
+            margin-bottom: 6px;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
         }
 
         .address-detail {
-            font-size: 0.85rem;
-            color: #000;
+            font-size: 0.9rem;
+            color: #2a1522;
             font-weight: 700;
             line-height: 1.4;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
         }
 
         .divider {
-            width: 40px;
-            height: 1.5px;
-            background: #8b6b4d;
-            margin: 20px auto;
+            width: 60px;
+            height: 2px;
+            background: #3b1e2f; 
+            margin: 25px auto;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
-        /* BOUTON RETOUR */
         .back-btn {
             margin-top: 25px;
             display: inline-block;
-            background: #8b6b4d; 
+            background: #3b1e2f; /* Bouton coordonné */
             color: #fff;
             text-decoration: none;
-            padding: 14px 50px;
-            font-size: 0.8rem;
+            padding: 15px 55px;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(59, 30, 47, 0.3);
         }
     </style>
 </head>
@@ -133,7 +135,7 @@
         <div class="event-group">
             <p class="date-time">Le 16 Juin 2026 à 15h00</p>
             <h2 class="location-name">À la Mairie de Levallois</h2>
-            <p class="address-detail">1 place de la République, 92300 Levallois-Perret</p>
+            <p class="address-detail">1 place de la République, 92300 Levallois</p>
         </div>
 
         <div class="divider"></div>
