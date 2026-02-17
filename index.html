@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lara & Gabriel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
@@ -16,7 +16,6 @@
             overflow: hidden; 
         }
 
-        /* IMAGE DE FOND EN PLEIN ÉCRAN */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -25,7 +24,6 @@
             z-index: 1;
         }
 
-        /* VOILE DE SOIE POUR LE CÔTÉ PRESTIGE */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -45,41 +43,44 @@
         }
 
         .names-container {
-            /* AJUSTEMENT HAUTEUR : Valeur modifiée pour remonter le bloc */
-            margin-top: -15dvh; 
-            margin-bottom: 50px;
+            margin-top: -12dvh; 
             animation: fadeIn 2.5s ease-in-out;
         }
 
-        /* ÉCRITURE SIGNATURE CLASSE */
+        /* RETOUR À LA FINESSE : FONT-WEIGHT 300 */
         .names {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3.5rem, 15vw, 6rem);
-            color: #3d2b1f; 
-            font-weight: 400;
-            line-height: 1.2;
-            text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.9), 0px 0px 10px rgba(255, 255, 255, 0.5);
-            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 11vw, 3.8rem);
+            color: #3b1e2f; 
+            font-weight: 300; /* Très fin et classe */
+            text-transform: uppercase;
+            letter-spacing: 14px; /* On augmente l'espace pour la lisibilité */
+            line-height: 1.4;
+            /* Ombre plus douce pour ne pas "épaissir" la lettre */
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
         }
 
         .ampersand {
-            font-size: 0.6em;
-            opacity: 0.8;
-            margin: 0 15px;
+            display: block;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #3b1e2f;
+            text-transform: none;
+            letter-spacing: 0;
+            margin: -5px 0;
+            font-weight: 400;
         }
 
         .subtitle {
             font-family: 'Montserrat', sans-serif;
-            color: #3d2b1f;
-            font-size: 9px;
+            color: #3b1e2f;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 8px; 
-            margin-top: 15px;
-            font-weight: 400;
-            opacity: 0.9;
+            margin-top: 25px;
+            font-weight: 500;
         }
 
-        /* BOUTON ÉPURÉ */
         .cta-container {
             position: absolute;
             bottom: 12dvh;
@@ -92,19 +93,14 @@
             font-size: 11px; 
             text-transform: uppercase;
             letter-spacing: 5px; 
-            background: #c39d7b; 
-            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 400;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .cta-center:hover {
-            background: #b08968;
-            letter-spacing: 7px; 
+            background: #3b1e2f; 
+            transition: 0.4s;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(59, 30, 47, 0.2);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -117,7 +113,9 @@
     <div class="main-ui">
         <div class="names-container">
             <h1 class="names">
-                Lara <span class="ampersand">&</span> Gabriel
+                LARA
+                <span class="ampersand">&</span>
+                GABRIEL
             </h1>
             <p class="subtitle">La suite commence</p>
         </div>
