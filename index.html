@@ -24,7 +24,6 @@
             z-index: 1;
         }
 
-        /* BLANCHIEMENT RÉDUIT À 8% */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -48,7 +47,6 @@
             animation: fadeIn 2.5s ease-in-out;
         }
 
-        /* LISIBILITÉ ACCENTUÉE SANS TROP DE BLANC AUTOUR */
         .names {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 11vw, 3.8rem);
@@ -57,10 +55,7 @@
             text-transform: uppercase;
             letter-spacing: 14px;
             line-height: 1.4;
-            /* Halo plus discret pour matcher le fond moins blanchi */
-            text-shadow: 
-                0px 0px 10px rgba(255, 255, 255, 0.8), 
-                0px 0px 20px rgba(255, 255, 255, 0.4);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 255, 255, 0.4);
         }
 
         .ampersand {
@@ -100,18 +95,40 @@
             transition: 0.4s;
             font-weight: 600;
             box-shadow: 0 4px 15px rgba(59, 30, 47, 0.4);
+            border: none;
+            cursor: pointer;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* BOUTON VOLUME DISCRET */
+        #mute-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            color: #3b1e2f;
+            font-size: 9px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            display: none;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
-<a href="premiere-page.html" class="cta-center" onclick="localStorage.setItem('musicPaused', 'false'); localStorage.setItem('musicTime', '0');">Découvrir</a>
+
     <div class="bg-container"></div>
     <div class="bg-overlay"></div>
+
+    <audio id="bg-music" loop>
+        <source src="musique4.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="mute-btn" onclick="toggleMute()">SOUND ON</div>
 
     <div class="main-ui">
         <div class="names-container">
@@ -124,9 +141,30 @@
         </div>
 
         <div class="cta-container">
-            <a href="premiere-page.html" class="cta-center">Découvrir</a>
+            <a href="premiere-page.html" target="_blank" class="cta-center" onclick="playMusic()">Découvrir</a>
         </div>
     </div>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+        const muteBtn = document.getElementById('mute-btn');
+
+        function playMusic() {
+            audio.play();
+            muteBtn.style.display = 'block';
+            // On laisse le lien ouvrir premiere-page.html dans un nouvel onglet
+        }
+
+        function toggleMute() {
+            if (audio.paused) {
+                audio.play();
+                muteBtn.innerText = "SOUND ON";
+            } else {
+                audio.pause();
+                muteBtn.innerText = "SOUND OFF";
+            }
+        }
+    </script>
 
 </body>
 </html>
