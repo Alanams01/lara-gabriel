@@ -24,10 +24,11 @@
             z-index: 1;
         }
 
+        /* BLANCHIEMENT RÉDUIT À 8% */
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.15); /* Légèrement plus blanc pour le contraste */
+            background: rgba(255, 255, 255, 0.08);
             z-index: 2;
         }
 
@@ -47,33 +48,30 @@
             animation: fadeIn 2.5s ease-in-out;
         }
 
-        /* ÉCRITURE PLUS ACCENTUÉE ET NETTE */
+        /* LISIBILITÉ ACCENTUÉE SANS TROP DE BLANC AUTOUR */
         .names {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 11vw, 3.8rem);
             color: #3b1e2f; 
-            font-weight: 500; /* Légèrement plus épais pour la visibilité */
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 14px;
             line-height: 1.4;
-            /* Le secret pour voir sans gras : un contour très fin + ombre dense */
-            -webkit-text-stroke: 0.5px #3b1e2f; 
+            /* Halo plus discret pour matcher le fond moins blanchi */
             text-shadow: 
-                0px 0px 15px rgba(255, 255, 255, 1), 
-                0px 0px 25px rgba(255, 255, 255, 0.8),
-                2px 2px 4px rgba(0, 0, 0, 0.1);
+                0px 0px 10px rgba(255, 255, 255, 0.8), 
+                0px 0px 20px rgba(255, 255, 255, 0.4);
         }
 
         .ampersand {
             display: block;
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem; /* Plus grand pour l'accentuer */
+            font-size: 3.2rem;
             color: #3b1e2f;
             text-transform: none;
             letter-spacing: 0;
             margin: -5px 0;
             font-weight: 400;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         }
 
         .subtitle {
@@ -83,8 +81,7 @@
             text-transform: uppercase;
             letter-spacing: 8px; 
             margin-top: 25px;
-            font-weight: 700; /* Sous-titre bien visible */
-            text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+            font-weight: 700;
         }
 
         .cta-container {
