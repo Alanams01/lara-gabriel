@@ -15,12 +15,10 @@
             overflow-x: hidden; 
         }
 
-        /* ARRIÈRE-PLAN PLEIN ÉCRAN */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: url('page.png') no-repeat center center;
-            /* Force l'image à prendre tout l'écran sans bandes noires */
             background-size: 100% 100%; 
             z-index: 1;
         }
@@ -35,7 +33,6 @@
             padding: 20px;
         }
 
-        /* VOILE BLANC TRANSLUCIDE */
         .overlay-card {
             background: rgba(255, 255, 255, 0.45); 
             backdrop-filter: blur(10px); 
@@ -51,7 +48,7 @@
 
         h1 {
             font-family: 'Cinzel', serif;
-            color: #c39d7b; /* Couleur sable */
+            color: #3b1e2f; /* Harmonisé avec ton thème Prune */
             font-size: 1.8rem;
             letter-spacing: 5px;
             text-transform: uppercase;
@@ -81,7 +78,7 @@
         input[type="text"], input[type="number"] {
             width: 100%; padding: 10px;
             border: none; 
-            border-bottom: 1px solid #c39d7b;
+            border-bottom: 1px solid #3b1e2f;
             font-family: 'Montserrat', sans-serif; 
             font-size: 1rem;
             outline: none; 
@@ -99,7 +96,7 @@
             font-weight: 600;
         }
 
-        input[type="radio"] { accent-color: #c39d7b; transform: scale(1.1); }
+        input[type="radio"] { accent-color: #3b1e2f; transform: scale(1.1); }
 
         .guest-count-box {
             display: none;
@@ -109,10 +106,9 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* BOUTON SABLE */
         .btn-submit {
             width: 100%; margin-top: 30px;
-            background: #c39d7b; 
+            background: #3b1e2f; 
             color: #fff;
             border: none; 
             padding: 14px;
@@ -144,6 +140,9 @@
             <p class="instruction">Votre réponse est attendue avant le 21 Mai 2026</p>
 
             <form id="rsvpForm" class="rsvp-form">
+                <input type="hidden" name="chabbat_pres" value="Non">
+                <input type="hidden" name="chabbat_nb" value="0">
+
                 <label>Nom & Prénom</label>
                 <input type="text" name="nom" required placeholder="Ex: Famille Cohen">
 
@@ -165,15 +164,6 @@
                     <input type="number" name="houppa_nb" placeholder="Nombre de personnes" min="1">
                 </div>
 
-                <label>Chabbat (26-27 Juin)</label>
-                <div class="presence-options">
-                    <label class="option-item"><input type="radio" name="chabbat_pres" value="Present" onclick="showCount('chabbat', true)" required> Présent</label>
-                    <label class="option-item"><input type="radio" name="chabbat_pres" value="Non" onclick="showCount('chabbat', false)"> Non</label>
-                </div>
-                <div id="count_chabbat" class="guest-count-box">
-                    <input type="number" name="chabbat_nb" placeholder="Nombre de personnes" min="1">
-                </div>
-
                 <button type="submit" class="btn-submit" id="submitBtn">Confirmer ma venue</button>
             </form>
 
@@ -186,8 +176,10 @@
             const box = document.getElementById('count_' + event);
             box.style.display = isPresent ? 'block' : 'none';
             if(!isPresent) box.querySelector('input').value = "";
+            else box.querySelector('input').required = true;
         }
 
+        // Remplace par ton URL Google Apps Script
         const scriptURL = 'VOTRE_URL_SCRIPT';
         const form = document.getElementById('rsvpForm');
 
@@ -204,7 +196,7 @@
                     setTimeout(() => { window.location.href = "premiere-page.html"; }, 2000);
                 })
                 .catch(() => {
-                    alert("Erreur");
+                    alert("Une erreur est survenue lors de l'envoi.");
                     btn.disabled = false;
                     btn.innerHTML = "Confirmer";
                 });
